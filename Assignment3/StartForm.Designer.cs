@@ -31,6 +31,8 @@
             this.newOrderButton = new System.Windows.Forms.Button();
             this.savedOrderButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // newOrderButton
@@ -66,17 +68,29 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Assignment3.Properties.Resources.Cart;
+            this.pictureBox1.Location = new System.Drawing.Point(326, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 127);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.savedOrderButton);
             this.Controls.Add(this.newOrderButton);
             this.Name = "StartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Start Form";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -86,6 +100,7 @@
         private System.Windows.Forms.Button newOrderButton;
         private System.Windows.Forms.Button savedOrderButton;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
