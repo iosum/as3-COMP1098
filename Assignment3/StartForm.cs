@@ -19,10 +19,37 @@ namespace Assignment3
 
         private void newOrderButton_Click(object sender, EventArgs e)
         {
-            
+            showSelectForm();
+        }
+
+        private void showSelectForm()
+        {
             SelectForm selectForm = new SelectForm();
             selectForm.Show();
             this.Hide();
+        }
+
+        private void savedOrderButton_Click(object sender, EventArgs e)
+        {
+            showProductInfoForm();
+        }
+
+        private void showProductInfoForm()
+        {
+            ProductInfoForm productInfoForm = new ProductInfoForm();
+            productInfoForm.Show();
+            this.Hide();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to exit the start form?", "Exit", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                System.Environment.Exit(0);
+
+            }
         }
     }
 }
