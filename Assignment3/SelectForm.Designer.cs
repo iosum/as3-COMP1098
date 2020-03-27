@@ -1,6 +1,6 @@
 ﻿namespace Assignment3
 {
-    partial class StartForm
+    partial class SelectForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.newOrderButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // newOrderButton
-            // 
-            this.newOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newOrderButton.Location = new System.Drawing.Point(468, 307);
-            this.newOrderButton.Name = "newOrderButton";
-            this.newOrderButton.Size = new System.Drawing.Size(203, 83);
-            this.newOrderButton.TabIndex = 0;
-            this.newOrderButton.Text = "New Order";
-            this.newOrderButton.UseVisualStyleBackColor = true;
-            this.newOrderButton.Click += new System.EventHandler(this.newOrderButton_Click);
-            // 
-            // StartForm
+            // SelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.newOrderButton);
-            this.Name = "StartForm";
+            this.ClientSize = new System.Drawing.Size(678, 430);
+            this.Name = "SelectForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Start Form";
+            this.Text = "SelectForm";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button newOrderButton;
     }
 }
-

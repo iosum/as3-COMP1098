@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace Assignment3
 {
-    public partial class StartForm : Form
+    public partial class SelectForm : Form
     {
-        public StartForm()
+        public SelectForm()
         {
             InitializeComponent();
-        }
-
-        private void newOrderButton_Click(object sender, EventArgs e)
-        {
-            
-            SelectForm selectForm = new SelectForm();
-            selectForm.Show();
-            this.Hide();
         }
     }
 }
