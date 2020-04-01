@@ -44,7 +44,21 @@ namespace Assignment3
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            int rowIndex = productDataGridView.CurrentRow.Index;
+            int currentId = (int)productDataGridView.Rows[rowIndex].Cells[0].Value;
 
+            try
+            {
+                var selectedName = (from product in productDb.Products
+                                    where product.ID == currentId
+                                    select product).FirstOrDefault();
+                Debug.WriteLine(selectedName.Model);
+                selectionTextBox.Text = selectedName.MFG + " " + selectedName.Model + "Priced at : " + selectedName.Cost;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message); 
+            }
         }
     }
 }
