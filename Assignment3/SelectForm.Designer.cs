@@ -32,9 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.productDataGridView = new System.Windows.Forms.DataGridView();
-            this.productContext = new Assignment3.ProductContext();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new Assignment3.ProductContextTableAdapters.ProductsTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mFGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,11 +48,16 @@
             this.hDDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gPUTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.webCamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productContext = new Assignment3.ProductContext();
+            this.productsTableAdapter = new Assignment3.ProductContextTableAdapters.ProductsTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.selectionTextBox = new System.Windows.Forms.TextBox();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productContext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productContext)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -108,20 +110,6 @@
             this.productDataGridView.TabIndex = 1;
             this.productDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productDataGridView_CellClick);
             this.productDataGridView.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // productContext
-            // 
-            this.productContext.DataSetName = "ProductContext";
-            this.productContext.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.productContext;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -235,6 +223,20 @@
             this.webCamDataGridViewTextBoxColumn.Name = "webCamDataGridViewTextBoxColumn";
             this.webCamDataGridViewTextBoxColumn.Width = 120;
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.productContext;
+            // 
+            // productContext
+            // 
+            this.productContext.DataSetName = "ProductContext";
+            this.productContext.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -249,8 +251,27 @@
             this.selectionTextBox.Location = new System.Drawing.Point(218, 545);
             this.selectionTextBox.Name = "selectionTextBox";
             this.selectionTextBox.ReadOnly = true;
-            this.selectionTextBox.Size = new System.Drawing.Size(629, 28);
+            this.selectionTextBox.Size = new System.Drawing.Size(518, 28);
             this.selectionTextBox.TabIndex = 3;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(773, 534);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(132, 39);
+            this.cancelButton.TabIndex = 4;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(932, 534);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(119, 39);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Next";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // SelectForm
             // 
@@ -258,6 +279,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1074, 605);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.selectionTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.productDataGridView);
@@ -270,8 +293,8 @@
             this.Text = "SelectForm";
             this.Load += new System.EventHandler(this.SelectForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productContext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productContext)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,5 +325,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn webCamDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox selectionTextBox;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button button2;
     }
 }

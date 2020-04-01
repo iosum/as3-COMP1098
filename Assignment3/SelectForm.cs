@@ -66,5 +66,16 @@ namespace Assignment3
             int rowIndex = productDataGridView.CurrentRow.Index;
             productDataGridView.Rows[rowIndex].Selected = true;
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to exit the select form?", "Exit", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                System.Environment.Exit(0);
+
+            }
+        }
     }
 }
