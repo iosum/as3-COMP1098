@@ -60,5 +60,11 @@ namespace Assignment3
                 Debug.WriteLine(ex.Message); 
             }
         }
+
+        private void productDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = productDataGridView.CurrentRow.Index;
+            productDataGridView.Rows[rowIndex].Selected = true;
+        }
     }
 }
