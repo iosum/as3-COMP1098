@@ -18,5 +18,10 @@ namespace Assignment3
         {
             InitializeComponent();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(" Name : Chia-Ying Ho\n v : 1.0 \n Website: dollarcomputers.ca \n Contact : info@dollarcomputers.ca", "About");
+        }
     }
 }

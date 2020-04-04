@@ -48,7 +48,7 @@
             this.helpToolStripMenuItem});
             this.orderFormMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.orderFormMenuStrip.Name = "orderFormMenuStrip";
-            this.orderFormMenuStrip.Size = new System.Drawing.Size(1271, 30);
+            this.orderFormMenuStrip.Size = new System.Drawing.Size(1271, 32);
             this.orderFormMenuStrip.TabIndex = 0;
             this.orderFormMenuStrip.Text = "menuStrip1";
             // 
@@ -95,7 +95,7 @@
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(59, 28);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
@@ -103,6 +103,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // OrderForm
             // 
