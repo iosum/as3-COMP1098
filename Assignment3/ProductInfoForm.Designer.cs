@@ -94,7 +94,7 @@
             this.productInfoFormMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.productInfoFormMenuStrip.Name = "productInfoFormMenuStrip";
             this.productInfoFormMenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.productInfoFormMenuStrip.Size = new System.Drawing.Size(959, 32);
+            this.productInfoFormMenuStrip.Size = new System.Drawing.Size(959, 30);
             this.productInfoFormMenuStrip.TabIndex = 0;
             this.productInfoFormMenuStrip.Text = "menuStrip1";
             // 
@@ -507,6 +507,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 583);
+            this.ControlBox = false;
             this.Controls.Add(this.label17);
             this.Controls.Add(this.selectAnotherProductButton);
             this.Controls.Add(this.nextButton);
