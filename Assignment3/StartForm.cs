@@ -36,7 +36,7 @@ namespace Assignment3
 
         private void showProductInfoForm()
         {
-            ProductInfoForm productInfoForm = new ProductInfoForm();
+            ProductInfoForm productInfoForm = new ProductInfoForm(null);
             productInfoForm.Show();
             this.Hide();
         }

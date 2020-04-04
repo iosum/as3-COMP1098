@@ -16,6 +16,11 @@ namespace Assignment3
         // connect to the db
         ProductsContext productDb = new ProductsContext();
 
+        // references to the forms
+        public StartForm startForm { get; set; }
+        public ProductInfoForm productInfoForm { get; set; }
+
+
         public SelectForm()
         {
             InitializeComponent();
@@ -70,7 +75,9 @@ namespace Assignment3
         private void nextButton_Click(object sender, EventArgs e)
         {
 
-            ProductInfoForm productInfoForm = new ProductInfoForm();
+            ProductInfoForm productInfoForm = new ProductInfoForm(getSelectedValue());
+
+            productInfoForm.selectForm = this;
             productInfoForm.Show();
             this.Hide();
         }
@@ -81,7 +88,7 @@ namespace Assignment3
 
         private void productDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            try
+            if(productDataGridView.SelectedRows.Count > 0)
             {
                 // display selected product details in the selection Text Box
                 selectionTextBox.Text = productDataGridView.SelectedCells[2].Value.ToString() + " "
@@ -91,11 +98,35 @@ namespace Assignment3
                 // enable the next button on selection being made
                 nextButton.Enabled = true;
             }
-            catch(Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
 
+
+
+        }
+
+        private List<string> getSelectedValue()
+        {
+            List<string> hardware = new List<string>
+            {
+                productDataGridView.SelectedRows[0].Cells[0].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[1].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[2].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[3].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[4].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[5].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[6].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[7].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[8].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[9].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[10].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[11].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[12].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[13].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[14].Value.ToString(),
+                productDataGridView.SelectedRows[0].Cells[15].Value.ToString()
+            };
+            
+
+            return hardware;
         }
     }
 }
