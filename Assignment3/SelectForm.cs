@@ -13,7 +13,8 @@ namespace Assignment3
 {
     public partial class SelectForm : Form
     {
-        ProductsModel productDb = new ProductsModel();
+        // connect to the db
+        ProductsContext productDb = new ProductsContext();
 
         public SelectForm()
         {
@@ -22,17 +23,13 @@ namespace Assignment3
 
         private void SelectForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'productContext.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.productContext.Products);
+
             try
             {
+                // select all the products in the Products table of the Products DB
                 var productList = (from product in productDb.Products
-                                   select product).ToList();
-
-                foreach (var product in productList)
-                {
-                    Debug.WriteLine(product.Cost);
-                }
+                                             select product).ToList();
+                productDataGridView.DataSource = productList;
             }
             catch (Exception ex)
             {
@@ -44,24 +41,16 @@ namespace Assignment3
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            int rowIndex = productDataGridView.CurrentRow.Index;
-            int currentId = (int)productDataGridView.Rows[rowIndex].Cells[0].Value;
 
-            try
-            {
-                var selectedName = (from product in productDb.Products
-                                    where product.ID == currentId
-                                    select product).FirstOrDefault();
-                Debug.WriteLine(selectedName.Model);
-                selectionTextBox.Text = selectedName.MFG + " " + selectedName.Model + "Priced at : " + selectedName.Cost;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message); 
-            }
         }
 
         private void productDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            highlightSelectedRow();
+            
+        }
+
+        private void highlightSelectedRow()
         {
             int rowIndex = productDataGridView.CurrentRow.Index;
             productDataGridView.Rows[rowIndex].Selected = true;
@@ -73,9 +62,40 @@ namespace Assignment3
 
             if (dialogResult == DialogResult.Yes)
             {
-                System.Environment.Exit(0);
+                Application.Exit();
 
             }
+        }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+
+            ProductInfoForm productInfoForm = new ProductInfoForm();
+            productInfoForm.Show();
+            this.Hide();
+        }
+
+        private void productDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {          
+        }
+
+        private void productDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // display selected product details in the selection Text Box
+                selectionTextBox.Text = productDataGridView.SelectedCells[2].Value.ToString() + " "
+                    + productDataGridView.SelectedCells[3].Value.ToString() + " Priced at: "
+                    + productDataGridView.SelectedCells[1].Value.ToString();
+
+                // enable the next button on selection being made
+                nextButton.Enabled = true;
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
         }
     }
 }

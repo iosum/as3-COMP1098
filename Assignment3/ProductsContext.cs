@@ -5,13 +5,14 @@ namespace Assignment3
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class ProductsModel : DbContext
+    public partial class ProductsContext : DbContext
     {
-        public ProductsModel()
+        public ProductsContext()
             : base("name=ProductsConnection")
         {
         }
 
+        // Table in the DB
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<User> Users { get; set; }
 

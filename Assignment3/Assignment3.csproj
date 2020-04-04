@@ -65,6 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Product.cs" />
+    <Compile Include="ProductContext.cs">
+      <DependentUpon>ProductContext.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProductContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,7 +79,7 @@
     <Compile Include="ProductInfoForm.Designer.cs">
       <DependentUpon>ProductInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductsModel.cs" />
+    <Compile Include="ProductsContext.cs" />
     <Compile Include="SelectForm.cs">
       <SubType>Form</SubType>
     </Compile>

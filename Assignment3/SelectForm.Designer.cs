@@ -29,32 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.productDataGridView = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mFGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lCDSizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPUBrandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPUTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPUNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPUSpeedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.conditionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.platformDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hDDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gPUTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.webCamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productContext = new Assignment3.ProductContext();
             this.productsTableAdapter = new Assignment3.ProductContextTableAdapters.ProductsTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.selectionTextBox = new System.Windows.Forms.TextBox();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productContext)).BeginInit();
@@ -72,156 +56,24 @@
             // 
             // productDataGridView
             // 
-            this.productDataGridView.AutoGenerateColumns = false;
             this.productDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.productDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.costDataGridViewTextBoxColumn,
-            this.mFGDataGridViewTextBoxColumn,
-            this.modelDataGridViewTextBoxColumn,
-            this.memoryDataGridViewTextBoxColumn,
-            this.lCDSizeDataGridViewTextBoxColumn,
-            this.cPUBrandDataGridViewTextBoxColumn,
-            this.cPUTypeDataGridViewTextBoxColumn,
-            this.cPUNumberDataGridViewTextBoxColumn,
-            this.cPUSpeedDataGridViewTextBoxColumn,
-            this.conditionDataGridViewTextBoxColumn,
-            this.platformDataGridViewTextBoxColumn,
-            this.oSDataGridViewTextBoxColumn,
-            this.hDDDataGridViewTextBoxColumn,
-            this.gPUTypeDataGridViewTextBoxColumn,
-            this.webCamDataGridViewTextBoxColumn});
-            this.productDataGridView.DataSource = this.productsBindingSource;
             this.productDataGridView.Location = new System.Drawing.Point(47, 82);
             this.productDataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.productDataGridView.Name = "productDataGridView";
             this.productDataGridView.RowTemplate.Height = 31;
             this.productDataGridView.Size = new System.Drawing.Size(800, 400);
             this.productDataGridView.TabIndex = 1;
-            this.productDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productDataGridView_CellClick);
-            this.productDataGridView.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // costDataGridViewTextBoxColumn
-            // 
-            this.costDataGridViewTextBoxColumn.DataPropertyName = "Cost";
-            this.costDataGridViewTextBoxColumn.HeaderText = "Cost";
-            this.costDataGridViewTextBoxColumn.Name = "costDataGridViewTextBoxColumn";
-            this.costDataGridViewTextBoxColumn.Width = 83;
-            // 
-            // mFGDataGridViewTextBoxColumn
-            // 
-            this.mFGDataGridViewTextBoxColumn.DataPropertyName = "MFG";
-            this.mFGDataGridViewTextBoxColumn.HeaderText = "MFG";
-            this.mFGDataGridViewTextBoxColumn.Name = "mFGDataGridViewTextBoxColumn";
-            this.mFGDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // modelDataGridViewTextBoxColumn
-            // 
-            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
-            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
-            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
-            this.modelDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // memoryDataGridViewTextBoxColumn
-            // 
-            this.memoryDataGridViewTextBoxColumn.DataPropertyName = "Memory";
-            this.memoryDataGridViewTextBoxColumn.HeaderText = "Memory";
-            this.memoryDataGridViewTextBoxColumn.Name = "memoryDataGridViewTextBoxColumn";
-            this.memoryDataGridViewTextBoxColumn.Width = 109;
-            // 
-            // lCDSizeDataGridViewTextBoxColumn
-            // 
-            this.lCDSizeDataGridViewTextBoxColumn.DataPropertyName = "LCDSize";
-            this.lCDSizeDataGridViewTextBoxColumn.HeaderText = "LCDSize";
-            this.lCDSizeDataGridViewTextBoxColumn.Name = "lCDSizeDataGridViewTextBoxColumn";
-            this.lCDSizeDataGridViewTextBoxColumn.Width = 116;
-            // 
-            // cPUBrandDataGridViewTextBoxColumn
-            // 
-            this.cPUBrandDataGridViewTextBoxColumn.DataPropertyName = "CPUBrand";
-            this.cPUBrandDataGridViewTextBoxColumn.HeaderText = "CPUBrand";
-            this.cPUBrandDataGridViewTextBoxColumn.Name = "cPUBrandDataGridViewTextBoxColumn";
-            this.cPUBrandDataGridViewTextBoxColumn.Width = 132;
-            // 
-            // cPUTypeDataGridViewTextBoxColumn
-            // 
-            this.cPUTypeDataGridViewTextBoxColumn.DataPropertyName = "CPUType";
-            this.cPUTypeDataGridViewTextBoxColumn.HeaderText = "CPUType";
-            this.cPUTypeDataGridViewTextBoxColumn.Name = "cPUTypeDataGridViewTextBoxColumn";
-            this.cPUTypeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cPUNumberDataGridViewTextBoxColumn
-            // 
-            this.cPUNumberDataGridViewTextBoxColumn.DataPropertyName = "CPUNumber";
-            this.cPUNumberDataGridViewTextBoxColumn.HeaderText = "CPUNumber";
-            this.cPUNumberDataGridViewTextBoxColumn.Name = "cPUNumberDataGridViewTextBoxColumn";
-            this.cPUNumberDataGridViewTextBoxColumn.Width = 147;
-            // 
-            // cPUSpeedDataGridViewTextBoxColumn
-            // 
-            this.cPUSpeedDataGridViewTextBoxColumn.DataPropertyName = "CPUSpeed";
-            this.cPUSpeedDataGridViewTextBoxColumn.HeaderText = "CPUSpeed";
-            this.cPUSpeedDataGridViewTextBoxColumn.Name = "cPUSpeedDataGridViewTextBoxColumn";
-            this.cPUSpeedDataGridViewTextBoxColumn.Width = 136;
-            // 
-            // conditionDataGridViewTextBoxColumn
-            // 
-            this.conditionDataGridViewTextBoxColumn.DataPropertyName = "Condition";
-            this.conditionDataGridViewTextBoxColumn.HeaderText = "Condition";
-            this.conditionDataGridViewTextBoxColumn.Name = "conditionDataGridViewTextBoxColumn";
-            this.conditionDataGridViewTextBoxColumn.Width = 122;
-            // 
-            // platformDataGridViewTextBoxColumn
-            // 
-            this.platformDataGridViewTextBoxColumn.DataPropertyName = "Platform";
-            this.platformDataGridViewTextBoxColumn.HeaderText = "Platform";
-            this.platformDataGridViewTextBoxColumn.Name = "platformDataGridViewTextBoxColumn";
-            this.platformDataGridViewTextBoxColumn.Width = 112;
-            // 
-            // oSDataGridViewTextBoxColumn
-            // 
-            this.oSDataGridViewTextBoxColumn.DataPropertyName = "OS";
-            this.oSDataGridViewTextBoxColumn.HeaderText = "OS";
-            this.oSDataGridViewTextBoxColumn.Name = "oSDataGridViewTextBoxColumn";
-            this.oSDataGridViewTextBoxColumn.Width = 72;
-            // 
-            // hDDDataGridViewTextBoxColumn
-            // 
-            this.hDDDataGridViewTextBoxColumn.DataPropertyName = "HDD";
-            this.hDDDataGridViewTextBoxColumn.HeaderText = "HDD";
-            this.hDDDataGridViewTextBoxColumn.Name = "hDDDataGridViewTextBoxColumn";
-            this.hDDDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // gPUTypeDataGridViewTextBoxColumn
-            // 
-            this.gPUTypeDataGridViewTextBoxColumn.DataPropertyName = "GPUType";
-            this.gPUTypeDataGridViewTextBoxColumn.HeaderText = "GPUType";
-            this.gPUTypeDataGridViewTextBoxColumn.Name = "gPUTypeDataGridViewTextBoxColumn";
-            this.gPUTypeDataGridViewTextBoxColumn.Width = 126;
-            // 
-            // webCamDataGridViewTextBoxColumn
-            // 
-            this.webCamDataGridViewTextBoxColumn.DataPropertyName = "WebCam";
-            this.webCamDataGridViewTextBoxColumn.HeaderText = "WebCam";
-            this.webCamDataGridViewTextBoxColumn.Name = "webCamDataGridViewTextBoxColumn";
-            this.webCamDataGridViewTextBoxColumn.Width = 120;
+            this.productDataGridView.SelectionChanged += new System.EventHandler(this.productDataGridView_SelectionChanged);
             // 
             // productsBindingSource
             // 
@@ -264,14 +116,16 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // button2
+            // nextButton
             // 
-            this.button2.Location = new System.Drawing.Point(932, 534);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 39);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Next";
-            this.button2.UseVisualStyleBackColor = true;
+            this.nextButton.Enabled = false;
+            this.nextButton.Location = new System.Drawing.Point(932, 534);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(119, 39);
+            this.nextButton.TabIndex = 5;
+            this.nextButton.Text = "Next";
+            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
             // SelectForm
             // 
@@ -279,7 +133,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1074, 605);
-            this.Controls.Add(this.button2);
+            this.ControlBox = false;
+            this.Controls.Add(this.nextButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.selectionTextBox);
             this.Controls.Add(this.label2);
@@ -307,25 +162,9 @@
         private ProductContext productContext;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private ProductContextTableAdapters.ProductsTableAdapter productsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mFGDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn memoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lCDSizeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cPUBrandDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cPUTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cPUNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cPUSpeedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn conditionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn platformDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oSDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hDDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gPUTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn webCamDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox selectionTextBox;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button nextButton;
     }
 }
