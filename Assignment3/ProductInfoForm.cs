@@ -18,6 +18,7 @@ namespace Assignment3
         private List<string> productDetails;
 
         public SelectForm selectForm { get; set; }
+        public OrderForm orderForm { get; set; }
 
         public ProductInfoForm(List<string> productDetails)
         {
@@ -96,6 +97,48 @@ namespace Assignment3
                     Debug.WriteLine("save file error : " + ex.Message);
                 }
             }
+        }
+
+        private void ProductInfoForm_Click(object sender, EventArgs e)
+        {
+            Button clickHandler = sender as Button;
+            //Debug.WriteLine(clickHandler.Tag.ToString());
+            switch(clickHandler.Tag.ToString())
+            {
+                case "Another":
+                    SelectForm selectForm = new SelectForm();
+                    selectForm.productInfoForm = this;
+                    selectForm.Show();
+                    this.Hide();
+                    break;
+
+                case "Cancel":
+                    DialogResult result = MessageBox.Show("Are You Sure you want to exit?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if(result == DialogResult.Yes)
+                    {
+                        Application.Exit();
+                    }
+
+                    break;
+
+                case "Next":
+                    OrderForm orderForm = new OrderForm();
+                    orderForm.productInfoForm = this;
+                    orderForm.Show();
+                    this.Hide();
+                    break;
+            }
+        }
+
+        private void selectAnotherProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.selectAnotherProductButton.PerformClick();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.cancelButton.PerformClick();
         }
     }
 }

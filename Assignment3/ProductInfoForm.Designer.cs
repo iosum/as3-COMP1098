@@ -94,7 +94,7 @@
             this.productInfoFormMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.productInfoFormMenuStrip.Name = "productInfoFormMenuStrip";
             this.productInfoFormMenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.productInfoFormMenuStrip.Size = new System.Drawing.Size(959, 30);
+            this.productInfoFormMenuStrip.Size = new System.Drawing.Size(959, 32);
             this.productInfoFormMenuStrip.TabIndex = 0;
             this.productInfoFormMenuStrip.Text = "menuStrip1";
             // 
@@ -107,7 +107,7 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(51, 26);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(51, 28);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openToolStripMenuItem
@@ -137,6 +137,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -144,7 +145,7 @@
             this.selectAnotherProductToolStripMenuItem});
             this.editToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(53, 28);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // selectAnotherProductToolStripMenuItem
@@ -152,6 +153,7 @@
             this.selectAnotherProductToolStripMenuItem.Name = "selectAnotherProductToolStripMenuItem";
             this.selectAnotherProductToolStripMenuItem.Size = new System.Drawing.Size(277, 30);
             this.selectAnotherProductToolStripMenuItem.Text = "Select Another Product";
+            this.selectAnotherProductToolStripMenuItem.Click += new System.EventHandler(this.selectAnotherProductToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -459,8 +461,10 @@
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(106, 50);
             this.cancelButton.TabIndex = 9;
+            this.cancelButton.Tag = "Cancel";
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.ProductInfoForm_Click);
             // 
             // nextButton
             // 
@@ -468,8 +472,10 @@
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(107, 50);
             this.nextButton.TabIndex = 10;
+            this.nextButton.Tag = "Next";
             this.nextButton.Text = "Next";
             this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.ProductInfoForm_Click);
             // 
             // selectAnotherProductButton
             // 
@@ -477,8 +483,10 @@
             this.selectAnotherProductButton.Name = "selectAnotherProductButton";
             this.selectAnotherProductButton.Size = new System.Drawing.Size(283, 50);
             this.selectAnotherProductButton.TabIndex = 11;
+            this.selectAnotherProductButton.Tag = "Another";
             this.selectAnotherProductButton.Text = "Select Another Product";
             this.selectAnotherProductButton.UseVisualStyleBackColor = true;
+            this.selectAnotherProductButton.Click += new System.EventHandler(this.ProductInfoForm_Click);
             // 
             // label17
             // 
@@ -518,6 +526,7 @@
             this.Name = "ProductInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductInfoForm";
+            this.Click += new System.EventHandler(this.ProductInfoForm_Click);
             this.productInfoFormMenuStrip.ResumeLayout(false);
             this.productInfoFormMenuStrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);

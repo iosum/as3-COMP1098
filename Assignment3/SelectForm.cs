@@ -63,7 +63,7 @@ namespace Assignment3
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Do you want to exit the select form?", "Exit", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Do you want to exit the select form?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (dialogResult == DialogResult.Yes)
             {
