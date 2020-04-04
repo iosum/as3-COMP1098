@@ -75,6 +75,7 @@
             this.nextButton = new System.Windows.Forms.Button();
             this.selectAnotherProductButton = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.productInfoFormMenuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -82,7 +83,6 @@
             // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "openFileDialog1";
             this.openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*\"";
             // 
             // productInfoFormMenuStrip
@@ -129,6 +129,7 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -149,7 +150,7 @@
             // selectAnotherProductToolStripMenuItem
             // 
             this.selectAnotherProductToolStripMenuItem.Name = "selectAnotherProductToolStripMenuItem";
-            this.selectAnotherProductToolStripMenuItem.Size = new System.Drawing.Size(278, 30);
+            this.selectAnotherProductToolStripMenuItem.Size = new System.Drawing.Size(277, 30);
             this.selectAnotherProductToolStripMenuItem.Text = "Select Another Product";
             // 
             // label1
@@ -488,6 +489,11 @@
             this.label17.TabIndex = 12;
             this.label17.Text = "Click Next to Confirm Your Selection";
             // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.FileName = "Product.txt";
+            this.saveFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*\"";
+            // 
             // ProductInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -572,5 +578,6 @@
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button selectAnotherProductButton;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

@@ -76,5 +76,26 @@ namespace Assignment3
                 }
             }
         }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    StreamWriter fileWriter = new StreamWriter(saveFileDialog.FileName);
+                    for (int i = 0; i < productDetails.Count; i++)
+                    {
+                        fileWriter.WriteLine(productDetails[i]);
+                    }
+
+                    fileWriter.Close();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("save file error : " + ex.Message);
+                }
+            }
+        }
     }
 }
