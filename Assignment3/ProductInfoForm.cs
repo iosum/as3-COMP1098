@@ -19,6 +19,7 @@ namespace Assignment3
 
         public SelectForm selectForm { get; set; }
         public OrderForm orderForm { get; set; }
+        public StartForm startForm { get; set; }
 
         public ProductInfoForm(List<string> productDetails)
         {
@@ -39,22 +40,22 @@ namespace Assignment3
 
         private void fillProductInfo()
         {
-            productIdTextBox.Text = productDetails[0];
-            costTextBox.Text = productDetails[1];
-            manufacturerTextBox.Text = productDetails[2];
-            modelTextBox.Text = productDetails[3];
-            memoryTextBox.Text = productDetails[4];
-            lcdSizeTextBox.Text = productDetails[5];
-            cpuBrandTextBox.Text = productDetails[6];
-            cpuTypeTextBox.Text = productDetails[7];
-            cpuNumberTextBox.Text = productDetails[8];
-            cpuSpeedTextBox.Text = productDetails[9];
-            conditionTextBox.Text = productDetails[10];
-            platformTextBox.Text = productDetails[11];
-            osTextBox.Text = productDetails[12];
-            hddTextBox.Text = productDetails[13];
-            gpuTextBox.Text = productDetails[14];
-            webCamTextBox.Text = productDetails[15];
+            productIdTextBox.Text = this.productDetails[0];
+            costTextBox.Text = this.productDetails[1];
+            manufacturerTextBox.Text = this.productDetails[2];
+            modelTextBox.Text = this.productDetails[3];
+            memoryTextBox.Text = this.productDetails[4];
+            lcdSizeTextBox.Text = this.productDetails[5];
+            cpuBrandTextBox.Text = this.productDetails[6];
+            cpuTypeTextBox.Text = this.productDetails[7];
+            cpuNumberTextBox.Text = this.productDetails[8];
+            cpuSpeedTextBox.Text = this.productDetails[9];
+            conditionTextBox.Text = this.productDetails[10];
+            platformTextBox.Text = this.productDetails[11];
+            osTextBox.Text = this.productDetails[12];
+            hddTextBox.Text = this.productDetails[13];
+            gpuTextBox.Text = this.productDetails[14];
+            webCamTextBox.Text = this.productDetails[15];
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,9 +65,9 @@ namespace Assignment3
                 try
                 {
                     StreamReader fileReader = new StreamReader(openFileDialog.FileName);
-                    for(int i = 0; i < productDetails.Count; i++)
+                    for(int i = 0; i < this.productDetails.Count; i++)
                     {
-                        productDetails.Add(fileReader.ReadLine());
+                        this.productDetails.Add(fileReader.ReadLine());
                     }
                     fileReader.Close();
                     fillProductInfo();
@@ -85,9 +86,9 @@ namespace Assignment3
                 try
                 {
                     StreamWriter fileWriter = new StreamWriter(saveFileDialog.FileName);
-                    for (int i = 0; i < productDetails.Count; i++)
+                    for (int i = 0; i < this.productDetails.Count; i++)
                     {
-                        fileWriter.WriteLine(productDetails[i]);
+                        fileWriter.WriteLine(this.productDetails[i]);
                     }
 
                     fileWriter.Close();
@@ -123,7 +124,7 @@ namespace Assignment3
                     break;
 
                 case "Next":
-                    OrderForm orderForm = new OrderForm();
+                    OrderForm orderForm = new OrderForm(this.productDetails);
                     orderForm.productInfoForm = this;
                     orderForm.Show();
                     this.Hide();

@@ -20,6 +20,8 @@ namespace Assignment3
         public StartForm startForm { get; set; }
         public ProductInfoForm productInfoForm { get; set; }
 
+        List<string> hardware = new List<string>();
+
 
         public SelectForm()
         {
