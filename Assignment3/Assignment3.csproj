@@ -165,6 +165,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\lenovo.jpg" />
+    <None Include="Resources\hp.jpg" />
+    <None Include="Resources\demo_thinkpad.jpg" />
+    <None Include="Resources\asus.jpeg" />
+    <None Include="Resources\acer.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

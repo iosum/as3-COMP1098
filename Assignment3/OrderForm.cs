@@ -54,6 +54,7 @@ namespace Assignment3
             salesTaxTextBox.Text = "$" + salesTax.ToString();
             totalTextBox.Text = "$" + total.ToString();
 
+
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)

@@ -64,9 +64,11 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.finishButton = new System.Windows.Forms.Button();
             this.productDetailsListBox = new System.Windows.Forms.ListBox();
+            this.laptopPictureBox = new System.Windows.Forms.PictureBox();
             this.orderFormMenuStrip.SuspendLayout();
             this.systemComponentsGroupBox.SuspendLayout();
             this.priceGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laptopPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // orderFormMenuStrip
@@ -328,9 +330,9 @@
             this.priceGroupBox.Controls.Add(this.costTextBox);
             this.priceGroupBox.Controls.Add(this.label3);
             this.priceGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceGroupBox.Location = new System.Drawing.Point(617, 189);
+            this.priceGroupBox.Location = new System.Drawing.Point(617, 238);
             this.priceGroupBox.Name = "priceGroupBox";
-            this.priceGroupBox.Size = new System.Drawing.Size(335, 263);
+            this.priceGroupBox.Size = new System.Drawing.Size(346, 263);
             this.priceGroupBox.TabIndex = 2;
             this.priceGroupBox.TabStop = false;
             this.priceGroupBox.Text = "Your Price";
@@ -428,11 +430,22 @@
             this.productDetailsListBox.Size = new System.Drawing.Size(345, 356);
             this.productDetailsListBox.TabIndex = 31;
             // 
+            // laptopPictureBox
+            // 
+            this.laptopPictureBox.Image = global::Assignment3.Properties.Resources.demo_thinkpad;
+            this.laptopPictureBox.Location = new System.Drawing.Point(617, 62);
+            this.laptopPictureBox.Name = "laptopPictureBox";
+            this.laptopPictureBox.Size = new System.Drawing.Size(346, 159);
+            this.laptopPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.laptopPictureBox.TabIndex = 6;
+            this.laptopPictureBox.TabStop = false;
+            // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 578);
+            this.Controls.Add(this.laptopPictureBox);
             this.Controls.Add(this.finishButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.backButton);
@@ -449,6 +462,7 @@
             this.systemComponentsGroupBox.PerformLayout();
             this.priceGroupBox.ResumeLayout(false);
             this.priceGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laptopPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,5 +506,6 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button finishButton;
         private System.Windows.Forms.ListBox productDetailsListBox;
+        private System.Windows.Forms.PictureBox laptopPictureBox;
     }
 }
