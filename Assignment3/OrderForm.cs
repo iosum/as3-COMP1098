@@ -104,7 +104,10 @@ namespace Assignment3
         {
             MessageBox.Show("Printing... Your selection is in process to print.", "Print", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        
-        
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.cancelButton.PerformClick();
+        }
     }
 }

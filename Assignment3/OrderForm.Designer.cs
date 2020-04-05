@@ -37,6 +37,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemComponentsGroupBox = new System.Windows.Forms.GroupBox();
+            this.productDetailsListBox = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.backButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.finishButton = new System.Windows.Forms.Button();
-            this.productDetailsListBox = new System.Windows.Forms.ListBox();
             this.laptopPictureBox = new System.Windows.Forms.PictureBox();
             this.orderFormMenuStrip.SuspendLayout();
             this.systemComponentsGroupBox.SuspendLayout();
@@ -80,7 +80,7 @@
             this.helpToolStripMenuItem});
             this.orderFormMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.orderFormMenuStrip.Name = "orderFormMenuStrip";
-            this.orderFormMenuStrip.Size = new System.Drawing.Size(1026, 30);
+            this.orderFormMenuStrip.Size = new System.Drawing.Size(1026, 32);
             this.orderFormMenuStrip.TabIndex = 0;
             this.orderFormMenuStrip.Text = "menuStrip1";
             // 
@@ -91,7 +91,7 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(51, 26);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(51, 28);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // printToolStripMenuItem
@@ -104,8 +104,9 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(129, 30);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -164,6 +165,15 @@
             this.systemComponentsGroupBox.TabIndex = 1;
             this.systemComponentsGroupBox.TabStop = false;
             this.systemComponentsGroupBox.Text = "System Components";
+            // 
+            // productDetailsListBox
+            // 
+            this.productDetailsListBox.FormattingEnabled = true;
+            this.productDetailsListBox.ItemHeight = 22;
+            this.productDetailsListBox.Location = new System.Drawing.Point(150, 145);
+            this.productDetailsListBox.Name = "productDetailsListBox";
+            this.productDetailsListBox.Size = new System.Drawing.Size(345, 356);
+            this.productDetailsListBox.TabIndex = 31;
             // 
             // label6
             // 
@@ -421,15 +431,6 @@
             this.finishButton.UseVisualStyleBackColor = true;
             this.finishButton.Click += new System.EventHandler(this.buttonClickHandler);
             // 
-            // productDetailsListBox
-            // 
-            this.productDetailsListBox.FormattingEnabled = true;
-            this.productDetailsListBox.ItemHeight = 22;
-            this.productDetailsListBox.Location = new System.Drawing.Point(150, 145);
-            this.productDetailsListBox.Name = "productDetailsListBox";
-            this.productDetailsListBox.Size = new System.Drawing.Size(345, 356);
-            this.productDetailsListBox.TabIndex = 31;
-            // 
             // laptopPictureBox
             // 
             this.laptopPictureBox.Image = global::Assignment3.Properties.Resources.demo_thinkpad;
@@ -445,6 +446,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1026, 578);
+            this.ControlBox = false;
             this.Controls.Add(this.laptopPictureBox);
             this.Controls.Add(this.finishButton);
             this.Controls.Add(this.cancelButton);
