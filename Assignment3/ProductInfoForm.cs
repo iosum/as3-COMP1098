@@ -65,28 +65,26 @@ namespace Assignment3
 
             if(result == DialogResult.OK)
             {
-                StreamReader inputStream = null;
+                StreamReader inputStream = new StreamReader(File.Open(openFileDialog.FileName, FileMode.Open));
                 try
                 {
-                    // Open the read stream
-                    inputStream = new StreamReader(this.openFileDialog.FileName);
+                    productIdTextBox.Text = inputStream.ReadLine();
+                    costTextBox.Text = inputStream.ReadLine();
+                    manufacturerTextBox.Text = inputStream.ReadLine();
+                    modelTextBox.Text = inputStream.ReadLine();
+                    memoryTextBox.Text = inputStream.ReadLine();
+                    lcdSizeTextBox.Text = inputStream.ReadLine();
+                    cpuBrandTextBox.Text = inputStream.ReadLine();
+                    cpuTypeTextBox.Text = inputStream.ReadLine();
+                    cpuNumberTextBox.Text = inputStream.ReadLine();
+                    cpuSpeedTextBox.Text = inputStream.ReadLine();
+                    conditionTextBox.Text = inputStream.ReadLine();
+                    platformTextBox.Text = inputStream.ReadLine();
+                    osTextBox.Text = inputStream.ReadLine();
+                    hddTextBox.Text = inputStream.ReadLine();
+                    gpuTextBox.Text = inputStream.ReadLine();
+                    webCamTextBox.Text = inputStream.ReadLine();
 
-                    // clear the productDetails before entering new data
-                    this.productDetails = new List<string>();
-
-                    while (inputStream.ReadLine() != null)
-                    {
-                        this.productDetails.Add(inputStream.ReadLine());
-                    }
-                    Debug.WriteLine(productDetails);
-
-                    //for(int i = 0; i < this.productDetails.Count; i++)
-                    //{
-                    //    this.productDetails.Add(fileStreamReader.ReadLine());
-                    //}
-                    //fileStreamReader.Close();
-                    //fillProductInfo();
-                    this.nextButton.PerformClick();
                 }
                 catch(Exception ex)
                 {
