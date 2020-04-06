@@ -34,7 +34,7 @@ namespace Assignment3
                 this.productDetails = productDetails;
             }
             
-
+            
             fillProductInfo();
         }
 
@@ -60,23 +60,57 @@ namespace Assignment3
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            this.openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            DialogResult result = this.openFileDialog.ShowDialog();
+
+            if(result == DialogResult.OK)
             {
+                StreamReader inputStream = null;
                 try
                 {
-                    StreamReader fileReader = new StreamReader(openFileDialog.FileName);
-                    for(int i = 0; i < this.productDetails.Count; i++)
+                    // Open the read stream
+                    inputStream = new StreamReader(this.openFileDialog.FileName);
+
+                    // clear the productDetails before entering new data
+                    this.productDetails = new List<string>();
+
+                    while (inputStream.ReadLine() != null)
                     {
-                        this.productDetails.Add(fileReader.ReadLine());
+                        this.productDetails.Add(inputStream.ReadLine());
                     }
-                    fileReader.Close();
-                    fillProductInfo();
+                    Debug.WriteLine(productDetails);
+
+                    //for(int i = 0; i < this.productDetails.Count; i++)
+                    //{
+                    //    this.productDetails.Add(fileStreamReader.ReadLine());
+                    //}
+                    //fileStreamReader.Close();
+                    //fillProductInfo();
+                    this.nextButton.PerformClick();
                 }
                 catch(Exception ex)
                 {
                     Debug.WriteLine("file errors" + ex.Message);
                 }
+                finally
+                {
+                    if(inputStream != null)
+                    {
+                        inputStream.Close();
+                    }
+                }
             }
+            else
+            {
+                if(productIdTextBox.Text == "0")
+                {
+                    MessageBox.Show("Please restart your order!", "Load Order Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    StartForm startForm = new StartForm();
+                    startForm.Show();
+                    this.Hide();
+                }
+            }
+
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -85,13 +119,13 @@ namespace Assignment3
             {
                 try
                 {
-                    StreamWriter fileWriter = new StreamWriter(saveFileDialog.FileName);
+                    StreamWriter outputStream = new StreamWriter(saveFileDialog.FileName);
                     for (int i = 0; i < this.productDetails.Count; i++)
                     {
-                        fileWriter.WriteLine(this.productDetails[i]);
+                        outputStream.WriteLine(this.productDetails[i]);
                     }
 
-                    fileWriter.Close();
+                    outputStream.Close();
                 }
                 catch (Exception ex)
                 {

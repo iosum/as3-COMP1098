@@ -69,9 +69,6 @@ namespace Assignment3
             switch(clickHandler.Tag.ToString())
             {
                 case "Back":
-                    ProductInfoForm productInfoForm = new ProductInfoForm(null);
-
-                    productInfoForm.orderForm = this;
 
                     productInfoForm.Show();
 
@@ -108,6 +105,11 @@ namespace Assignment3
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.cancelButton.PerformClick();
+        }
+
+        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.backButton.PerformClick();
         }
     }
 }

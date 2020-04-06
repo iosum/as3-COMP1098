@@ -80,7 +80,7 @@
             this.helpToolStripMenuItem});
             this.orderFormMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.orderFormMenuStrip.Name = "orderFormMenuStrip";
-            this.orderFormMenuStrip.Size = new System.Drawing.Size(1026, 32);
+            this.orderFormMenuStrip.Size = new System.Drawing.Size(1026, 30);
             this.orderFormMenuStrip.TabIndex = 0;
             this.orderFormMenuStrip.Text = "menuStrip1";
             // 
@@ -104,7 +104,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(129, 30);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -114,14 +114,15 @@
             this.backToolStripMenuItem});
             this.editToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(53, 28);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // backToolStripMenuItem
             // 
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(132, 30);
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -129,7 +130,7 @@
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(59, 28);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
@@ -351,6 +352,7 @@
             // 
             this.totalTextBox.Location = new System.Drawing.Point(215, 198);
             this.totalTextBox.Name = "totalTextBox";
+            this.totalTextBox.ReadOnly = true;
             this.totalTextBox.Size = new System.Drawing.Size(100, 28);
             this.totalTextBox.TabIndex = 12;
             // 
@@ -367,6 +369,7 @@
             // 
             this.salesTaxTextBox.Location = new System.Drawing.Point(215, 116);
             this.salesTaxTextBox.Name = "salesTaxTextBox";
+            this.salesTaxTextBox.ReadOnly = true;
             this.salesTaxTextBox.Size = new System.Drawing.Size(100, 28);
             this.salesTaxTextBox.TabIndex = 10;
             // 
@@ -383,6 +386,7 @@
             // 
             this.costTextBox.Location = new System.Drawing.Point(215, 65);
             this.costTextBox.Name = "costTextBox";
+            this.costTextBox.ReadOnly = true;
             this.costTextBox.Size = new System.Drawing.Size(100, 28);
             this.costTextBox.TabIndex = 8;
             // 
