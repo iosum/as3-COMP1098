@@ -37,6 +37,12 @@ namespace Assignment3
             
             fillProductInfo();
         }
+        
+        public ProductInfoForm()
+        {
+            InitializeComponent();
+            this.openToolStripMenuItem.PerformClick();
+        }
 
         private void fillProductInfo()
         {
@@ -68,25 +74,10 @@ namespace Assignment3
                 StreamReader inputStream = new StreamReader(File.Open(openFileDialog.FileName, FileMode.Open));
                 try
                 {
-                    productIdTextBox.Text = inputStream.ReadLine();
-                    costTextBox.Text = inputStream.ReadLine();
-                    manufacturerTextBox.Text = inputStream.ReadLine();
-                    modelTextBox.Text = inputStream.ReadLine();
-                    memoryTextBox.Text = inputStream.ReadLine();
-                    lcdSizeTextBox.Text = inputStream.ReadLine();
-                    cpuBrandTextBox.Text = inputStream.ReadLine();
-                    cpuTypeTextBox.Text = inputStream.ReadLine();
-                    cpuNumberTextBox.Text = inputStream.ReadLine();
-                    cpuSpeedTextBox.Text = inputStream.ReadLine();
-                    conditionTextBox.Text = inputStream.ReadLine();
-                    platformTextBox.Text = inputStream.ReadLine();
-                    osTextBox.Text = inputStream.ReadLine();
-                    hddTextBox.Text = inputStream.ReadLine();
-                    gpuTextBox.Text = inputStream.ReadLine();
-                    webCamTextBox.Text = inputStream.ReadLine();
+                    loadProductsFromFile(inputStream);
 
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Debug.WriteLine("file errors" + ex.Message);
                 }
@@ -109,6 +100,26 @@ namespace Assignment3
                 }
             }
 
+        }
+
+        private void loadProductsFromFile(StreamReader inputStream)
+        {
+            productIdTextBox.Text = inputStream.ReadLine();
+            costTextBox.Text = inputStream.ReadLine();
+            manufacturerTextBox.Text = inputStream.ReadLine();
+            modelTextBox.Text = inputStream.ReadLine();
+            memoryTextBox.Text = inputStream.ReadLine();
+            lcdSizeTextBox.Text = inputStream.ReadLine();
+            cpuBrandTextBox.Text = inputStream.ReadLine();
+            cpuTypeTextBox.Text = inputStream.ReadLine();
+            cpuNumberTextBox.Text = inputStream.ReadLine();
+            cpuSpeedTextBox.Text = inputStream.ReadLine();
+            conditionTextBox.Text = inputStream.ReadLine();
+            platformTextBox.Text = inputStream.ReadLine();
+            osTextBox.Text = inputStream.ReadLine();
+            hddTextBox.Text = inputStream.ReadLine();
+            gpuTextBox.Text = inputStream.ReadLine();
+            webCamTextBox.Text = inputStream.ReadLine();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)

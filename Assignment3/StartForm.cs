@@ -12,6 +12,8 @@ namespace Assignment3
 {
     public partial class StartForm : Form
     {
+        public ProductInfoForm productInfoForm { get; set; }
+
         public StartForm()
         {
             InitializeComponent();
@@ -36,7 +38,7 @@ namespace Assignment3
 
         private void showProductInfoForm()
         {
-            ProductInfoForm productInfoForm = new ProductInfoForm(null);
+            ProductInfoForm productInfoForm = new ProductInfoForm();
             productInfoForm.Show();
             this.Hide();
         }
